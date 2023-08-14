@@ -31,9 +31,15 @@
           _lastTouchedSlotId = null
 
         var _imageLibrary = [
+            { id: 1, image: '/triplets.jpeg', title: 'triplets' },
+            { id: 33, image: '/feedme.jpeg', title: 'feedme' },
             { id: 23, image: '/manatee-baby.jpeg', title: 'mamatee' },
             { id: 67, image: '/manatee-mama.webp', title: 'mama-baby' },
-            { id: 42, image: '/manatee-straighton.jpeg', title: 'whachulookinat'},
+            {
+              id: 42,
+              image: '/manatee-straighton.jpeg',
+              title: 'whachulookinat'
+            },
             { id: 28, image: '/mothernchild.jpeg', title: 'pre-school' },
             { id: 5567, image: '/ahem.jpeg', title: 'ahem' },
             { id: 879, image: '/awwww.jpeg', title: 'awwww' },
@@ -42,10 +48,11 @@
             { id: 93, image: '/iknowiamphat.jpeg', title: 'iamphat' },
             { id: 2, image: '/leavemealone.jpeg', title: 'leavemealone' },
             { id: 57, image: '/sigh....jpeg', title: 'sigh...' }
-        ],
-          _listedImageIds = [23, 67, 42, 57, 314, 879, 28, 93, 5567, 2]
+          ],
+          _listedImageIds = [1, 33, 23, 67, 42, 57, 314, 879, 28, 93, 5567, 2]
 
-        function init() {addImageSlots()
+        function init() {
+          addImageSlots()
           drawImages()
 
           _doc
@@ -206,8 +213,9 @@
             if (hoverSlotId != undefined && _lastTouchedSlotId != hoverSlotId) {
               _lastTouchedSlotId = hoverSlotId
 
-              var temp = _listedImageIds[index] 
-              _listedImageIds[index] = _listedImageIds[hoverSlotId];_listedImageIds[hoverSlotId] = temp
+              var temp = _listedImageIds[index]
+              _listedImageIds[index] = _listedImageIds[hoverSlotId]
+              _listedImageIds[hoverSlotId] = temp
 
               arrangeItems()
             }
